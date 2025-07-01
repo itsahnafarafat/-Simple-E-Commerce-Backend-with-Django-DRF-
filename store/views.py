@@ -4,6 +4,7 @@ from .serializers import ProductSerializer, CartItemSerializer, OrderSerializer
 from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
 from rest_framework.decorators import action
 from rest_framework.response import Response
+from rest_framework.permissions import IsAdminUser
 
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
@@ -47,3 +48,12 @@ class OrderViewSet(viewsets.ModelViewSet):
         cart_items.delete() # Clear cart
         serializer = self.get_serializer(order)
         return Response(serializer.data)
+    
+class ProductViewSet(viewsets.ModelViewSet):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+
+    def get_permissions(self):
+        if self.action in ['create', 'update', 'partial_update', 'destory']:
+            return [IsAdminUser()]
+        return [IsAuthenticatedOrReadOnly()]
