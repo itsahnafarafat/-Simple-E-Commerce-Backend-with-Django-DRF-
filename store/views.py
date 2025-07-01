@@ -1,10 +1,11 @@
-from rest_framework import viewsets
+from rest_framework import viewsets, filters
 from .models import Product, CartItem, Order, OrderItem
 from .serializers import ProductSerializer, CartItemSerializer, OrderSerializer
 from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.permissions import IsAdminUser
+from django_filters.rest_framework import DjangoFilterBackend
 
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
@@ -57,3 +58,8 @@ class ProductViewSet(viewsets.ModelViewSet):
         if self.action in ['create', 'update', 'partial_update', 'destory']:
             return [IsAdminUser()]
         return [IsAuthenticatedOrReadOnly()]
+    
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter]
+    filterset_fields = ['in_stock']
+    search_fields = ['name', 'description']
+    
