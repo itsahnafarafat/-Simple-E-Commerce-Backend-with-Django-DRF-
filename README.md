@@ -44,7 +44,7 @@ ecommerce-backend/
 
 ### 1️⃣ Clone the repo
 ```bash
-git clone https://github.com/YOUR_USERNAME/ecommerce-backend.git
+git clone https://github.com/itsahnafarafat/-Simple-E-Commerce-Backend-with-Django-DRF-.git
 cd ecommerce-backend
 ````
 
@@ -161,7 +161,7 @@ MIT License – do whatever you want, just give credit :)
 ### ✅ Next Step:
 
 1. Save this as `README.md` in the root of your project.
-2. Replace `"YOUR_USERNAME"` and `"YOUR_PROFILE"` with your GitHub and LinkedIn.
+2. Replace `itsahnafarafat` and `Ahnaf Arafat` with your GitHub and LinkedIn.
 3. Commit it:
 
 ```bash
