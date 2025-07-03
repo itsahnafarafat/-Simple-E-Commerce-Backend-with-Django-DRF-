@@ -153,5 +153,3 @@ Backend Developer | Python & Django Specialist
 ## 📝 License
 
 MIT License – do whatever you want, just give credit :)
-
-````
