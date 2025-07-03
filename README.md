@@ -155,19 +155,3 @@ Backend Developer | Python & Django Specialist
 MIT License – do whatever you want, just give credit :)
 
 ````
-
----
-
-### ✅ Next Step:
-
-1. Save this as `README.md` in the root of your project.
-2. Replace `itsahnafarafat` and `Ahnaf Arafat` with your GitHub and LinkedIn.
-3. Commit it:
-
-```bash
-git add README.md
-git commit -m "📘 Add professional README with features, setup, and docs"
-git push
-````
-
-
